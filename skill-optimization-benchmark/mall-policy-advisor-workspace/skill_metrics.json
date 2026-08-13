@@ -1,0 +1,18 @@
+{
+  "v1_original": {
+    "path": "skill-snapshot-v1/SKILL.md",
+    "characters": 2603,
+    "utf8_bytes": 6473,
+    "lines": 142,
+    "estimated_tokens_cjk_proxy": 2158,
+    "token_method": "ceil(UTF-8 bytes / 3); relative proxy, not billing tokens"
+  },
+  "v2_optimized": {
+    "path": "mall-policy-advisor/SKILL.md",
+    "characters": 1611,
+    "utf8_bytes": 3669,
+    "lines": 65,
+    "estimated_tokens_cjk_proxy": 1223,
+    "token_method": "ceil(UTF-8 bytes / 3); relative proxy, not billing tokens"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "expectations": [
+    {
+      "text": "36小时且待发货可以直接取消，不走退货退款流程",
+      "passed": true,
+      "evidence": "命中全部模式：36小时；直接取消；不需要走退货退款流程"
+    },
+    {
+      "text": "取消成功后24小时内退款，积分按原数量退回且无损耗",
+      "passed": true,
+      "evidence": "命中全部模式：24小时；积分；原数量"
+    },
+    {
+      "text": "52小时已超过48小时，不能直接取消，需要走退货退款流程",
+      "passed": true,
+      "evidence": "命中全部模式：52小时；不可以直接取消；退货退款流程"
+    },
+    {
+      "text": "上海13:30早于14:00，可以选择次日达并额外支付10元",
+      "passed": true,
+      "evidence": "命中全部模式：上海；13:30；14:00；10元"
+    },
+    {
+      "text": "新疆不支持次日达，运费固定12元",
+      "passed": true,
+      "evidence": "命中全部模式：新疆；不支持次日达；12元"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 1,
+    "files_created": [
+      "answer.md"
+    ],
+    "errors_encountered": 0,
+    "output_chars": 243,
+    "output_utf8_bytes": 637,
+    "estimated_output_tokens_cjk_proxy": 213
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "断言覆盖本实验的关键边界条件。"
+  }
+}

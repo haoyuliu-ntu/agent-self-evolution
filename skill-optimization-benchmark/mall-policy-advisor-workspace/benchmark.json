@@ -1,0 +1,345 @@
+{
+  "metadata": {
+    "skill_name": "mall-policy-advisor",
+    "comparison": "v2 optimized (with_skill) vs v1 original (without_skill)",
+    "evals_run": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_configuration": 1,
+    "token_method": "ceil(UTF-8 bytes / 3); relative proxy, excludes identical task prompt"
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "eval_name": "refund-priority-conflicts",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 0,
+        "tokens": 1408,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "明确说明未激活的电子书也不支持退款",
+          "passed": true,
+          "evidence": "命中全部模式：电子书；未激活；不可以退款"
+        },
+        {
+          "text": "电子书质量问题需提交工单并附截图",
+          "passed": true,
+          "evidence": "命中全部模式：文件打不开；工单；截图"
+        },
+        {
+          "text": "金卡限时特惠商品第8天已超过7天退货期，因此不可退",
+          "passed": true,
+          "evidence": "命中全部模式：第8天；7天；不可以退"
+        },
+        {
+          "text": "说明限时特惠若在期限内由平台承担运费，且金卡不享受90天延长",
+          "passed": true,
+          "evidence": "命中全部模式：平台承担；不延长"
+        },
+        {
+          "text": "积分抵扣10元退回800积分，银行卡支付100元原路退回银行卡",
+          "passed": true,
+          "evidence": "命中全部模式：800积分；100元；银行卡"
+        }
+      ],
+      "notes": [
+        "tokens为中文token代理值；相同测试提示的固定成本未计入。"
+      ]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "logistics-and-cancellation",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 0,
+        "tokens": 1374,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "36小时且待发货可以直接取消，不走退货退款流程",
+          "passed": true,
+          "evidence": "命中全部模式：36小时；直接取消；不走退货退款流程"
+        },
+        {
+          "text": "取消成功后24小时内退款，积分按原数量退回且无损耗",
+          "passed": true,
+          "evidence": "命中全部模式：24小时；积分；原数量"
+        },
+        {
+          "text": "52小时已超过48小时，不能直接取消，需要走退货退款流程",
+          "passed": true,
+          "evidence": "命中全部模式：52小时；不可以直接取消；退货退款流程"
+        },
+        {
+          "text": "上海13:30早于14:00，可以选择次日达并额外支付10元",
+          "passed": true,
+          "evidence": "命中全部模式：上海；13:30；14:00；10元"
+        },
+        {
+          "text": "新疆不支持次日达，运费固定12元",
+          "passed": true,
+          "evidence": "命中全部模式：新疆；不支持次日达；12元"
+        }
+      ],
+      "notes": [
+        "tokens为中文token代理值；相同测试提示的固定成本未计入。"
+      ]
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "membership-promotion-account",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 0,
+        "tokens": 1389,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "白卡门槛1000元且1.5倍积分，银卡5000元且2倍，金卡20000元且3倍",
+          "passed": true,
+          "evidence": "命中全部模式：白卡：年消费满1,000元、1.5倍；银卡：满5,000元、2倍；金卡：满20,000元、3倍"
+        },
+        {
+          "text": "退货后400元不再满足599元门槛，需要重新计算并补回满减差价",
+          "passed": true,
+          "evidence": "命中全部模式：400元；不再满足；重新计算；补回"
+        },
+        {
+          "text": "新人券退款后不补发",
+          "passed": true,
+          "evidence": "命中全部模式：新人券；不补发"
+        },
+        {
+          "text": "账户冻结期间不能使用VIP权益，也不能发起退款",
+          "passed": true,
+          "evidence": "命中全部模式：冻结；不能使用VIP权益；不能发起退款"
+        },
+        {
+          "text": "解冻需联系客服提交身份验证，审核时间1至3个工作日",
+          "passed": true,
+          "evidence": "命中全部模式：身份验证；1-3个工作日"
+        }
+      ],
+      "notes": [
+        "tokens为中文token代理值；相同测试提示的固定成本未计入。"
+      ]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "refund-priority-conflicts",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 0,
+        "tokens": 2375,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "明确说明未激活的电子书也不支持退款",
+          "passed": true,
+          "evidence": "命中全部模式：电子书；无论是否激活；不可以退款"
+        },
+        {
+          "text": "电子书质量问题需提交工单并附截图",
+          "passed": true,
+          "evidence": "命中全部模式：文件打不开；工单；截图"
+        },
+        {
+          "text": "金卡限时特惠商品第8天已超过7天退货期，因此不可退",
+          "passed": true,
+          "evidence": "命中全部模式：第8天；7天；不可以退"
+        },
+        {
+          "text": "说明限时特惠若在期限内由平台承担运费，且金卡不享受90天延长",
+          "passed": true,
+          "evidence": "命中全部模式：平台承担；90天"
+        },
+        {
+          "text": "积分抵扣10元退回800积分，银行卡支付100元原路退回银行卡",
+          "passed": true,
+          "evidence": "命中全部模式：800积分；100元；银行卡"
+        }
+      ],
+      "notes": [
+        "tokens为中文token代理值；相同测试提示的固定成本未计入。"
+      ]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "logistics-and-cancellation",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 0,
+        "tokens": 2371,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "36小时且待发货可以直接取消，不走退货退款流程",
+          "passed": true,
+          "evidence": "命中全部模式：36小时；直接取消；不需要走退货退款流程"
+        },
+        {
+          "text": "取消成功后24小时内退款，积分按原数量退回且无损耗",
+          "passed": true,
+          "evidence": "命中全部模式：24小时；积分；原数量"
+        },
+        {
+          "text": "52小时已超过48小时，不能直接取消，需要走退货退款流程",
+          "passed": true,
+          "evidence": "命中全部模式：52小时；不可以直接取消；退货退款流程"
+        },
+        {
+          "text": "上海13:30早于14:00，可以选择次日达并额外支付10元",
+          "passed": true,
+          "evidence": "命中全部模式：上海；13:30；14:00；10元"
+        },
+        {
+          "text": "新疆不支持次日达，运费固定12元",
+          "passed": true,
+          "evidence": "命中全部模式：新疆；不支持次日达；12元"
+        }
+      ],
+      "notes": [
+        "tokens为中文token代理值；相同测试提示的固定成本未计入。"
+      ]
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "membership-promotion-account",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 0,
+        "tokens": 2344,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "白卡门槛1000元且1.5倍积分，银卡5000元且2倍，金卡20000元且3倍",
+          "passed": true,
+          "evidence": "命中全部模式：白卡：年消费门槛1,000元，1.5倍；银卡：5,000元，2倍；金卡：20,000元，3倍"
+        },
+        {
+          "text": "退货后400元不再满足599元门槛，需要重新计算并补回满减差价",
+          "passed": true,
+          "evidence": "命中全部模式：400元；不再满足；重新计算；补回"
+        },
+        {
+          "text": "新人券退款后不补发",
+          "passed": true,
+          "evidence": "命中全部模式：新人券；不会补发"
+        },
+        {
+          "text": "账户冻结期间不能使用VIP权益，也不能发起退款",
+          "passed": true,
+          "evidence": "命中全部模式：冻结；不能使用VIP权益；不能发起退款"
+        },
+        {
+          "text": "解冻需联系客服提交身份验证，审核时间1至3个工作日",
+          "passed": true,
+          "evidence": "命中全部模式：身份验证；1至3个工作日"
+        }
+      ],
+      "notes": [
+        "tokens为中文token代理值；相同测试提示的固定成本未计入。"
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "tokens": {
+        "mean": 1390.3333,
+        "stddev": 13.9124,
+        "min": 1374,
+        "max": 1408
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "tokens": {
+        "mean": 2363.3333,
+        "stddev": 13.7679,
+        "min": 2344,
+        "max": 2375
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.0000",
+      "time_seconds": "not measured",
+      "tokens": "-973.0",
+      "token_percent": "-41.2%"
+    }
+  },
+  "notes": [
+    "v1与v2在15条客观断言上均全部通过，压缩未造成测试集内的正确率回归。",
+    "v2通过显式优先级避免用VIP规则覆盖数字商品、限时特惠和冻结账户规则。",
+    "时间指标未测量；token为同一公式下的相对代理值，不等同于API账单token。",
+    "每个配置每题仅运行1次，不能据此估计模型随机性的方差。"
+  ]
+}

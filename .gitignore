@@ -1,0 +1,15 @@
+.env
+.env.*
+__pycache__/
+*.pyc
+.venv/
+models/
+*.bin
+*.safetensors
+*.db
+*.faiss
+*.pkl
+*.rar
+*.zip
+.DS_Store
+Thumbs.db

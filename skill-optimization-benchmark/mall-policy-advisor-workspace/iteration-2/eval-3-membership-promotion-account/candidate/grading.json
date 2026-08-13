@@ -1,0 +1,57 @@
+{
+  "expectations": [
+    {
+      "text": "白卡门槛1000元且1.5倍积分，银卡5000元且2倍，金卡20000元且3倍",
+      "passed": true,
+      "evidence": "命中全部模式：白卡：年消费满1,000元、1.5倍；银卡：满5,000元、2倍；金卡：满20,000元、3倍"
+    },
+    {
+      "text": "退货后400元不再满足599元门槛，需要重新计算并补回满减差价",
+      "passed": true,
+      "evidence": "命中全部模式：400元；不再满足；重新计算；补回"
+    },
+    {
+      "text": "新人券退款后不补发",
+      "passed": true,
+      "evidence": "命中全部模式：新人券；不补发"
+    },
+    {
+      "text": "账户冻结期间不能使用VIP权益，也不能发起退款",
+      "passed": true,
+      "evidence": "命中全部模式：冻结；不能使用VIP权益；不能发起退款"
+    },
+    {
+      "text": "解冻需联系客服提交身份验证，审核时间1至3个工作日",
+      "passed": true,
+      "evidence": "命中全部模式：身份验证；1-3个工作日"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 1,
+    "files_created": [
+      "answer.md"
+    ],
+    "errors_encountered": 0,
+    "output_chars": 204,
+    "output_utf8_bytes": 498,
+    "estimated_output_tokens_cjk_proxy": 166
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "断言覆盖本实验的关键边界条件。"
+  }
+}

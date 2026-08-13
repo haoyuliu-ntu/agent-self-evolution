@@ -1,0 +1,57 @@
+{
+  "expectations": [
+    {
+      "text": "明确说明未激活的电子书也不支持退款",
+      "passed": true,
+      "evidence": "命中全部模式：电子书；未激活；不可以退款"
+    },
+    {
+      "text": "电子书质量问题需提交工单并附截图",
+      "passed": true,
+      "evidence": "命中全部模式：文件打不开；工单；截图"
+    },
+    {
+      "text": "金卡限时特惠商品第8天已超过7天退货期，因此不可退",
+      "passed": true,
+      "evidence": "命中全部模式：第8天；7天；不可以退"
+    },
+    {
+      "text": "说明限时特惠若在期限内由平台承担运费，且金卡不享受90天延长",
+      "passed": true,
+      "evidence": "命中全部模式：平台承担；不延长"
+    },
+    {
+      "text": "积分抵扣10元退回800积分，银行卡支付100元原路退回银行卡",
+      "passed": true,
+      "evidence": "命中全部模式：800积分；100元；银行卡"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 1,
+    "files_created": [
+      "answer.md"
+    ],
+    "errors_encountered": 0,
+    "output_chars": 207,
+    "output_utf8_bytes": 555,
+    "estimated_output_tokens_cjk_proxy": 185
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "断言覆盖本实验的关键边界条件。"
+  }
+}
